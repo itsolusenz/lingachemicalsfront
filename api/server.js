@@ -8,14 +8,20 @@ const resolvers = require('./src/resolver');
 import cors from 'cors';
 
 async function startApolloServer(typeDefs, resolvers) {
+    const corsOptions = {
+        origin: 'https://demo-ten-vert.vercel.app',
+        credentials: true
+    }
+
+
     const app = express();
-    app.use('/uploads',
-        cors({ origin: ['https://demo-ten-vert.vercel.app', 'https://demo-git-main-itsolusenz.vercel.app'] }),
-        express.static('src/images'));
+    app.use('/uploads', express.static('src/images'));
     const httpServer = http.createServer(app);
     const server = new ApolloServer({
         typeDefs,
+        cors: cors(corsOptions),
         resolvers,
+        csrfPrevention: true,
         plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     });
     await server.start();
