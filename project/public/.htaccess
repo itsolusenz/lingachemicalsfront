@@ -78,9 +78,16 @@ Header set Cache-Control "max-age=31536000, public"
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
   Header append Vary User-Agent
 </IfModule>
-
 <IfModule mod_headers.c>
-  Header set Access-Control-Allow-Origin "*" 
-</IfModule>
+  
+    Header add Access-Control-Allow-Origin "*"
+  #  Header add Access-Control-Allow-Origin "https://lobsmartcard.vercel.app/"
+   # Header add Access-Control-Allow-Origin "https://faceposadmin.vercel.app"
+  
+    Header add Access-Control-Allow-Methods  "GET, POST, OPTIONS, DELETE, PUT"
+    Header add Access-Control-Allow-Headers "Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization"
+    Header set Cache-Control "no-cache"
+ </IfModule>
+
 
 ErrorDocument 404 https://d-themes.com/404/
