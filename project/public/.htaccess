@@ -2,7 +2,7 @@ RewriteEngine On
 
 RewriteCond %{HTTP_HOST} ^d-themes.com$
 RewriteCond %{HTTP} off
-RewriteRule ^(.*)$ http://d-themes.com/react/porto/demo3/$1 [NC,R,L]
+RewriteRule ^(.*)$ http://d-themes.com/$1 [NC,R,L]
 
 RewriteRule ^shop/(3cols|4cols|5cols|6cols|7cols|8cols) shop/[grid]/index.html?grid=$1 [L]
 RewriteRule ^product/(default|center|custom-tab|extended|full-width|grid|left-sidebar|right-sidebar|sticky-both|sticky-cart|sticky-info|transparent)/(.*) product/$1/[slug]/index.html?slug=$2 [L]
@@ -83,4 +83,4 @@ Header set Cache-Control "max-age=31536000, public"
   Header set Access-Control-Allow-Origin "*" 
 </IfModule>
 
-ErrorDocument 404 https://d-themes.com/react/porto/demo3/404/
+ErrorDocument 404 https://d-themes.com/404/
