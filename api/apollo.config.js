@@ -1,7 +1,7 @@
 module.exports = {
     client: {
         service: {
-            url: 'https://your_server.com/graphql'
+            url: 'https://demoapi.vercel.app/graphql'
         }
     }
 }
