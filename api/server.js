@@ -2,10 +2,10 @@ const express = require('express');
 const http = require('http');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginDrainHttpServer } = require('apollo-server-core');
-
+const cors = require('cors');
 const typeDefs = require('./src/schema');
 const resolvers = require('./src/resolver');
-import cors from 'cors';
+
 
 async function startApolloServer(typeDefs, resolvers) {
     const corsOptions = {
