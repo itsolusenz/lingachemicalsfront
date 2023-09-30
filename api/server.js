@@ -9,7 +9,7 @@ const resolvers = require('./src/resolver');
 
 async function startApolloServer(typeDefs, resolvers) {
     const corsOptions = {
-        origin: 'https://demo-ten-vert.vercel.app',
+        origin: '*',
         credentials: true
     }
 
